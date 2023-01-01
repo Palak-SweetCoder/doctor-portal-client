@@ -1,27 +1,28 @@
 import React from 'react';
+import chair from '../../assets/images/chair.png';
 
 const Banner = () => {
     return (
-        <div>
+        <>
             <div className="hero min-h-screen">
-                <div className="hero-content flex-col lg:flex-row-reverse">
-                    <img
-                        src="https://placeimg.com/260/400/arch"
-                        className="max-w-sm rounded-lg shadow-2xl"
+                <div className="hero-content flex-col lg:flex-row-reverse  bg-hero-pattern bg-cover bg-center bg-no-repeat">
+                    <div className="lg:p-20"><img
+                        src={chair}
+                        className="sm:max-w-sm rounded-lg shadow-2xl"
                         alt=""
-                    />
-                    <div>
-                        <h1 className="text-5xl font-bold">Box Office News!</h1>
+                    /></div>
+                    <div className="lg:p-20">
+                        <h1 className="text-5xl font-bold">Your New Smile Starts Here</h1>
                         <p className="py-6">
                             Provident cupiditate voluptatem et in. Quaerat
-                            fugiat ut assumenda excepturi exercitationem quasi.
+                            fugiat ut assumenda excepturi quasi.
                             In deleniti eaque aut repudiandae et a id nisi.
                         </p>
-                        <button className="btn btn-primary">Get Started</button>
+                        <button className="btn btn-primary text-white font-bold bg-gradient-to-r from-primary to-secondary">Get Started</button>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
