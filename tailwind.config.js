@@ -4,7 +4,7 @@ module.exports = {
     theme: {
         backgroundImage: {
             'hero-pattern': "url('/src/assets/images/bg.png')",
-          }
+        },
     },
     daisyui: {
         themes: [
