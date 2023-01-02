@@ -1,11 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: ['./src/**/*.{html,js}'],
-    theme: {
-        backgroundImage: {
-            'hero-pattern': "url('/src/assets/images/bg.png')",
-        },
-    },
     daisyui: {
         themes: [
             {

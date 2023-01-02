@@ -4,7 +4,7 @@ import chair from '../../assets/images/chair.png';
 const Banner = () => {
     return (
         <>
-            <div className="hero min-h-screen  bg-hero-pattern bg-cover bg-center bg-no-repeat">
+            <div className="hero min-h-screen  bg-[url('/src/assets/images/bg.png')] bg-cover bg-center bg-no-repeat">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="lg:p-20">
                         <img
@@ -22,7 +22,7 @@ const Banner = () => {
                             fugiat ut assumenda excepturi quasi. In deleniti
                             eaque aut repudiandae et a id nisi.
                         </p>
-                        <button className="btn btn-primary text-white font-bold bg-gradient-to-r from-primary to-secondary">
+                        <button className="btn btn-primary text-white font-bold bg-gradient-to-l from-primary to-secondary">
                             Get Started
                         </button>
                     </div>
