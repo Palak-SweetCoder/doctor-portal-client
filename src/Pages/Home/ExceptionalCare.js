@@ -8,7 +8,7 @@ const ExceptionalCare = () => {
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className='lg:p-12'>
-                        <img src={treatment} className="sm:max-w-sm rounded-lg shadow-2xl" />
+                        <img src={treatment} className="sm:max-w-sm rounded-lg shadow-2xl" alt='' />
                     </div>
                     <div className="lg:p-12">
                         <h1 className="text-5xl font-bold">Exceptional Dental Care, on Your Terms</h1>
