@@ -3,8 +3,8 @@ import React from 'react';
 const Footer = () => {
     return (
         <footer className="bg-[url('/src/assets/images/footer.png')] bg-cover bg-center bg-no-repeat">
-            <div className='my-10 lg:ml-48'>
-                <div className='footer container mx-auto p-4 lg:p-0'>
+            <div className='my-10'>
+                <div className='footer container mx-auto p-4 lg:p-0 lg:justify-around'>
                     <div>
                         <span className="footer-title">Services</span>
                         <a className="link link-hover" href='/'>Branding</a>
@@ -28,7 +28,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='text-center p-5'>
-                <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+                <p>Copyright © 2023 - All right reserved</p>
             </div>
         </footer>
     );
