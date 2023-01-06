@@ -1,28 +1,44 @@
 import React from 'react';
 import auth from '../../firebase.init';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import {
+    useSignInWithEmailAndPassword,
+    useSignInWithGoogle,
+} from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 
 const Login = () => {
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, gUser, gLoading, gError] =
+        useSignInWithGoogle(auth);
+    const [signInWithEmailAndPassword, user, loading, error] =
+        useSignInWithEmailAndPassword(auth);
     const {
         register,
         formState: { errors },
         handleSubmit,
     } = useForm();
+    let signInError;
 
-    if (user) {
-        console.log(user);
+    if (gUser) {
+        console.log(gUser);
     }
-    if (loading) {
-        //Hello
+    if (gLoading || loading) {
+        return (
+            <div className="text-center p-20">
+                <button className="btn loading text-white">loading...</button>
+            </div>
+        );
     }
-    if (error) {
-        //World
+    if (gError || error) {
+        signInError = (
+            <p className="text-red-500 p-3">
+                {gError?.message || error?.message}
+            </p>
+        );
     }
 
     const onSubmit = (data) => {
         console.log(data);
+        signInWithEmailAndPassword(data.email, data.password);
     };
 
     return (
@@ -107,6 +123,8 @@ const Login = () => {
                         {/* -------------------------password field end---------------------- */}
 
                         {/* -------------------------daisy form end---------------------- */}
+
+                        {signInError}
 
                         <input
                             className="btn w-full max-w-xs text-white"
