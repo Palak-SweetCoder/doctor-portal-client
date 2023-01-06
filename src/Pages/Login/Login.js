@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import auth from '../../firebase.init';
 import {
     useSignInWithEmailAndPassword,
     useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] =
@@ -18,10 +18,17 @@ const Login = () => {
         handleSubmit,
     } = useForm();
     let signInError;
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || '/';
 
-    if (gUser || user) {
-        // console.log(gUser);
-    }
+    useEffect(() => {
+        if (gUser || user) {
+            // console.log(gUser);
+            navigate(from, { replace: true });
+        }
+    }, [gUser, user, from, navigate]);
+
     if (gLoading || loading) {
         return (
             <div className="text-center p-20">
