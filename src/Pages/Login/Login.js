@@ -19,8 +19,8 @@ const Login = () => {
     } = useForm();
     let signInError;
 
-    if (gUser) {
-        console.log(gUser);
+    if (gUser || user) {
+        // console.log(gUser);
     }
     if (gLoading || loading) {
         return (
@@ -38,7 +38,7 @@ const Login = () => {
     }
 
     const onSubmit = (data) => {
-        console.log(data);
+        // console.log(data);
         signInWithEmailAndPassword(data.email, data.password);
     };
 
