@@ -5,6 +5,7 @@ import {
     useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] =
@@ -133,6 +134,16 @@ const Login = () => {
                         />
                     </form>
                     {/* -------------------------hook form end---------------------- */}
+
+                    <p>
+                        <small>
+                            New to doctors portal?{' '}
+                            <Link to="/signup" className="text-primary">
+                                Create New Account.
+                            </Link>
+                        </small>
+                    </p>
+
                     <div className="divider">OR</div>
                     <button
                         className="btn btn-outline"
